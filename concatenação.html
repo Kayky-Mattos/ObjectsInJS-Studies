@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Estudos JS</title>
+        <script>
+            var anything = 'olá mundo'.toLocaleUpperCase()
+            var undeVar
+            //var nome = prompt('Digite o seu nome')
+            //var idade = prompt('Digite a sua idade')
+            var nome = 'kayky'
+            var idade = 17
+            document.write('<h1>Olá, ' +nome+ ' Tudo bem ? estou vendo aqui que voce tem '+idade+' anos.</h1>')
+            document.write('<h3>' +anything+ '</h3>')    
+            console.log(undeVar)/*
+                No caso aqui oque será apresentado no console.log vai ser
+                o UNDEFINED pois apenas declaramos a variavel, e nao 
+                atribuimos nenhum valor
+                    0 na programação representa FALSE e 1 TRUE
+                                */
+                var allowed = (idade > 18) ? "Parabéns, você é maior de idade" : "Você é de menor"
+                document.write(allowed)
+        </script>
+    </head>
+
+    <body>
+        <!-- <script src="estudosJS.js"></script> -->
+    </body>
+</html>

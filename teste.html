@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p>
+
+  </body>
+
+    <script>
+     const cat = {
+    name: 'Bertie',
+    breed : 'Cymric',
+    color : 'white',
+    greeting: function() {
+      console.log('Meow!');
+    }
+  }
+
+  const teacher = {
+      name:['Jose','zezao'],
+      age:[58],
+      subject:['cience'],
+      fullName: function(){
+          return this.name[0] +' '+ this.name[1]
+      },
+      bio: function(){
+        alert(`hi my name is ${this.name[0]} ${this.name[1]} and i teach ${this.subject[0]}`)
+      }
+  };
+  
+  // Put your code here
+  let catName = cat.name
+  cat.greeting()
+  cat.color ='black'
+  console.log(catName)
+  document.write(`The cat\'s name is ${ cat.name }\n`)
+  document.write(`The cat's color is ${ cat.color }.`)
+  // Don't edit the code below here
+  
+  let para1 = document.createElement('p');
+  let para2 = document.createElement('p');
+  
+  para1.textContent = `The cat's name is ${ cat.name }.`;
+  para2.textContent = `The cat's color is ${ cat.color }.`;
+  
+  //section.appendChild(para1);
+  //section.appendChild(para2);
+
+  const band = {
+      name: 'Halkwies',
+      nationality: ['brazil'],
+      genre: ['funk'],
+      members: ['DJ novinho','DJ rudy','MC rd'],
+      formed: 2020,
+      split: false,
+      albums: ['piui','tictac'],
+      released: 2021
+  }
+  const band2 ={
+      name: ['Halkwies'],
+      nationality: ['United States of America'],
+      genre: ['funk'],
+      members: ['DJ novinho','DJ rudy','MC rd'],
+      formed: 2020,
+      split: false,
+      albums: ['piui','tictac'],
+      released: 2021
+  }
+  const band3 ={
+      name: ['Scarpelli'],
+      nationality: ['United Kingdom'],
+      genre: ['funk'],
+      members: ['DJ novinho','DJ rudy','MC rd'],
+      formed: 2020,
+      split: false,
+      albums: ['piui','tictac'],
+      released: 2021
+  }
+  
+
+//     function Person(name){
+//         this.name = name
+//         this.greeting = function(){
+//             alert('Hi, I\'m ' +this.name+ '.')
+//         };
+//     }
+    
+//    var avoMaternaM = new Person('Maria')
+//    var avoMaternoF = new Person('Josue')
+//    var avoPaternoM = new Person('Liodoro')
+//    var avoPaternaF = new Person('Gercina')
+
+    function Person(first,last,age,gender,interests){
+        this.name = {
+            'first':first,
+            'last' :last
+        }
+        this.age = age
+        this.gender = gender
+        this.interests = interests,
+        this.bio = function(){
+
+            var string = this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. '
+            var prounoun
+            var interests = ' Likes '+ this.interests[0] +' and '+ this.interests[1];
+            //Juninho Mattos is 17 years old. He
+
+            (this.gender === 'masculine') ? prounoun = 'He' : 'She'
+
+            string += prounoun
+            string += interests
+            alert(string)
+        }
+        this.greeting = function(){
+        alert('Hi i\'m '+this.name.first+'.')
+        }
+    }
+    var person1 = new Person('Juninho','Mattos',17,'masculine',['Coding','VideoGame'])
+    var person2 = new Object();
+
+    person2.name = 'Chris';
+    person2['age'] = 38;
+    person2.greeting = function() {
+  alert('Hi! I\'m ' + this.name + '.');
+};
+
+var person70 = new Object({
+  name: 'Chris',
+  age: 38,
+  greeting: function() {
+    alert('Hi! I\'m ' + this.name + '.');
+  }
+});
+    </script>
+</html>

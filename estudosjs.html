@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Estudos JS</title>
+        <script>
+
+            //String
+            var text ='Estudos de JS by Kayky'
+
+            //number
+            var number = 10
+            var fractionalNumber = 120.23839
+
+            //boolean
+            var teste = true
+            var teste1 = false
+
+            //alert(fractionalNumber)
+            
+            document.write(text)
+
+            //console.log(n)
+            //criacao de um objeto
+            const cellPhone = {
+                brand:"Iphone",
+                model:"Iphone 7",
+                color:"Preto",
+                condicion:{
+                    usageTime:"2 years",
+                    bateryHealth: "60%"
+
+                },
+                descricao: function(){
+                    // o this nesse caso é pra retornar as variaveis apenas dessa funcao
+                    return this.model+ " " +this.color+ " sem nenhum detalhe, Saude da bateria: "+this.bateryHealth
+                }
+            };
+
+            console.log(cellPhone)
+            console.log(cellPhone.brand)
+            console.log(cellPhone['model'])
+            console.log(cellPhone.condicion.bateryHealth)
+            console.log(cellPhone.descricao())
+
+            var FirstArray = new Array()
+            FirstArray[0] = 'esse é o primeiro array'
+            FirstArray[1] = 'esse é o segundo array'
+            FirstArray[2] = 'esse é o terceiro array'
+
+            console.log(FirstArray.length)
+
+            var SecondArray = [1,2,3,4,5,6,7,8,9]
+            console.log(SecondArray.length)
+
+            for(var i = 0, item; item = SecondArray[i++];){
+                console.log('Olá mundão')
+            }
+
+            function soma(x,y){
+                somaTotal = x + y
+                return somaTotal
+            }
+
+            function average(){
+                var sum = 0
+
+                for(var i=0, j = arguments.length; i < j ; i++){
+                    sum += arguments[i]
+                }
+                return sum / arguments.length
+            }
+        
+            function averageArray(arr){
+                var sum = 0
+
+                for(var i = 0,j = arr.length; i<j ; i++){
+                    sum += arr[i]
+                }
+                return sum / arr.length
+            }
+            
+
+            function personFullName(){
+                return this.first +' '+ this.last
+            }
+            function personFullNameReversed(){
+                return this.last +' '+ this.first
+            }
+            
+            function person(first,last){
+                this.first = first
+                this.last = last
+
+                this.fullName = personFullName
+                this.fullNameReversed = personFullNameReversed
+            }
+
+            var a = new person("Kayky","Mattos")
+            console.log(a.fullNameReversed())
+
+            String.prototype.reversed = function() {
+                let start = 0, end = this.length -1
+                result = new Array(this.length)
+                while(start <= end) {
+                    result[start] = this[end]
+                    result[end] = this[start]
+
+                    start++, end--
+                }
+                return result.join('')
+            }
+            console.log('Kayky Mattos'.reversed())
+        </script>
+    </head>
+
+    <body>
+        <h1> Variáveis </h1>
+         <!--<script src="estudosJS.js"></script>-->
+    </body>
+</html>
